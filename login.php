@@ -2,8 +2,7 @@
 session_start(); // Start session for login management
 
 // Database connection
-$con = mysqli_connect('sql303.infinityfree.com', 'if0_38330023', 'BG0b6db2G5', 'if0_38330023_Data');
-
+$con = mysqli_connect('localhost', 'root', '', 'login'); 
 // Check connection
 if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
