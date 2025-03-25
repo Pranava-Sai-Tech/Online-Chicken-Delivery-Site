@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Chicken Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/website favicon.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f429;
+        }
+
+        .navbar {
+            display: flex;             
+            justify-content: space-between; 
+            align-items: center;        
+            background-color: #333;     
+            padding: 10px 20px;    
+        }
+
+        .navbar-left a, .navbar-right a {
+            color: #4CAF50;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            color: white;
+            border-radius: 5px;
+        }
+
+        header {
+            background-image: url('images/chickenfry.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; 
+            color: rgb(226, 69, 16);
+            padding: 180px;
+            text-align: center;
+        }
+
+        header button {
+            position: absolute;
+            background-color: white;
+            color: #ff6f61;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            top: 120px; 
+            right: 40px; 
+        }
+
+        .navbar .active {
+            background-color: #4CAF50; 
+            color: white;
+            border-radius: 5px;
+        }
+
+        header h1 {
+            position: relative;
+            top: 50px; 
+            right: 40px; 
+            font-size: 50px;
+            color: #333;
+            font-weight: 800;
+        }
+
+        header p {
+            position: relative;
+            top: 60px;
+            font-size: 30px;
+            color: #ffffff;
+        }
+
+        section {
+            padding: 10px;
+            background-color: rgba(45, 169, 200, 0.279);
+            margin: 0;  
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6f61;
+        }
+
+        .aboutshop {   
+            background-image: url('images/chickenman.jpg');
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            background-position: right center;
+            padding: 30px;
+            margin: 10px 0; 
+        }
+
+        .product { 
+            cursor: pointer;
+            width: 300px;
+            margin: 30px;
+            border: 5px solid #0000005f;
+            padding: 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .paymentdel {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .favicons {
+            float: none;
+            margin: 0;
+            text-align: center;
+        }
+
+        .favicons img {
+            width: 50px; 
+            height: 50px;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        li {
+            margin-bottom: 10px; 
+            font-size: 16px;
+        }
+
+        .details {
+            padding: 5px;
+            text-align: center;
+        }
+
+        .deliverydel {
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .deliverydel ul {
+            list-style: disc;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 100px 20px; 
+            }
+
+            header h1 {
+                font-size: 36px; 
+            }
+
+            header p {
+                font-size: 20px; 
+            }
+
+            .product {
+                width: 90%; 
+                margin: 10px; 
+            }
+
+            .product img {
+                width: 100%; 
+                height: auto; 
+            }
+
+            .favicons img {
+                width: 30px; 
+                height: 30px;
+            }
+
+            .deliverydel img {
+                width: 100%; 
+                height: auto; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                background-color: #333;
+            }
+
+            .navbar-left, .navbar-right {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%; /* Makes the container span the full width */
+            }
+
+            .navbar-left a, .navbar-right a {
+                color: #4CAF50;
+                padding: 15px 20px;
+                text-decoration: none;
+                text-align: center;
+                flex: 1 1 33%; /* Flexbox: 33% width for 3 items per row */
+            }
+
+            .navbar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            header button {
+                position: absolute;
+                background-color: white;
+                color: #ff6f61;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 16px;
+                top: 300px; 
+                right: 40px; 
+            }
+
+            header h1 {
+                position: relative;
+                top: 50px; 
+                right: 20px; 
+                font-size: 50px;
+                color: #333;
+                font-weight: 800;
+            }
+
+            .aboutshop {   
+                background-image: url('images/chickenman.jpg');
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: right center;
+                margin: 10px 0; 
+            }
+
+            .product {
+                width: 100%; 
+                margin: 10px auto; 
+                padding: 10px;
+                box-sizing: border-box; 
+                text-align: center; 
+                border: 5px solid #0000005f; 
+                border-radius: 8px; 
+                background-color: #e6f2ff; 
+            }
+
+            .product img {
+                width: 100%; 
+                max-width: 300px; 
+                height: auto; 
+                margin: 0 auto; 
+                display: block;
+                border-radius: 8px; 
+            }
+
+            .favicons img {
+                width: 20px; 
+                height: 20px;
+            }
+
+            .deliverydel img {
+                width: 90%; 
+                height: auto; 
+            }
+
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#products">Shop Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="navbar-right">
+            <a href="https://chickenstore.free.nf/signup.php">Signup</a>
+            <a href="https://chickenstore.free.nf/login.php">Login</a>
+            <a href="https://chickenstore.free.nf/logout.php">Logout</a>
+        </div>
+    </nav>    
+    <div id="home"></div>
+    <!-- Header Section -->  
+    <header>
+        <h1>Online Chicken Delivery</h1>
+        <p>Experience the freshest, highest quality poultry and meat delivered straight to your door.</p>
+        <div class="shopnow">
+            <a href="shopnow.php">
+                <button>Shop Now</button>
+            </a>   
+        </div>     
+    </header>    
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="aboutshop">
+            <h2>About Us</h2>
+            <p>We provide the freshest, high-quality poultry and meat. Our commitment to quality ensures you receive the best.</p>
+            <ul>
+                <li>Commitment to Quality</li>
+                <li>Freshness Guaranteed</li>
+                <li>Wide Selection</li>
+            </ul>
+        </div>    
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Premium Chicken Cuts</h2>
+        <div class="product">
+            <img src="images/chickenbody.jpg" alt="Product Image">
+            <h3>Whole Chickens</h3>
+            <p>Perfect for roasting, grilling, or frying.</p>
+        </div>
+        <div class="product">
+            <img src="images/chickenbreast.jpg " alt="Product Image">
+            <h3>Chicken Breasts</h3>
+            <p>Versatile and lean, ideal for stir-fries or salads.</p>
+        </div>
+        <div class="product">
+            <img src="images/chickenthigh.jpg" alt="Product Image">
+            <h3>Chicken Thighs</h3>
+            <p>Juicy and flavorful for grilling or roasting.</p>
+        </div>
+        <div class="product">
+            <img src="images/chickenlegs.jpg" alt="Product Image">
+            <h3>Chicken Legs</h3>
+            <p>Very tasty and easy to cook and roast.</p>
+        </div>
+        <div class="product">
+            <img src="images/wings.png" alt="Product Image">
+            <h3>Chicken Wings</h3>
+            <p>Crispy, delicious, and easy to cook, making them a perfect snack or meal option.</p>
+        </div>
+        <div class="product">
+            <img src="images/drumstick.jpg" alt="Product Image">
+            <h3>Chicken Drumsticks</h3>
+            <p>Juicy, tender, and simple to cook, offering a flavorful bite every time.</p>
+        </div>
+        <div class="product">
+            <img src="images/skinless.png" alt="Product Image">
+            <h3>Chicken skinless</h3>
+            <p>Lean, tender, and easy to cook, perfect for healthy and flavorful meals.</p>
+        </div>
+        <div class="product">
+            <img src="images/pieces.png" alt="Product Image">
+            <h3>Chicken small pieces</h3>
+            <p>Quick to cook, versatile, and perfect for stir-fries, curries, or snacks.</p>
+        </div>
+    </section>
+
+    <section id="payment">
+        <div class="paymentdel">
+            <h2>Secure Payment Options</h2>
+            <p>We accept Phonepe, Gpay, Paytm, and cash on delivery.</p>
+        </div> 
+        <div class="favicons">
+            <img src="images/phonepe.png" alt="Favicon 1">
+            <img src="images/gpay.jpg" alt="Favicon 2">
+            <img src="images/paytm.png" alt="Favicon 3">
+            <img src="images/cod.png" alt="Favicon 4">
+        </div>   
+    </section>
+
+    <section id="contact">
+        <div class="details">
+            <h2>Contact Information</h2>
+            <p>PH.no: 8897595016</p>
+            <p>Email: kalagatlapranavasai@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section id="delivery">
+        <div class="deliverydel">
+            <h2>Fast, Reliable Delivery</h2>
+            <img src="images/orderprocess.png" alt="Delivery Image">
+            <ul>
+                <li>Order Placement: Place your order online, from 6:00 am to 10:00 pm.</li>
+                <li>Order Processing: Orders are carefully processed for safe delivery.</li>
+                <li>Delivery: Delivered right to your doorstep.</li>
+            </ul>
+        </div>    
+    </section>
+
+    <!-- Footer Section --> 
+    <footer>
+        <p>&copy; 2025 online chicken delivery @pranavasai. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
